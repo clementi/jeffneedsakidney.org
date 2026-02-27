@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm build:*)",
+      "Bash(cp:*)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "Bash(curl:*)",
+      "Bash(mkdir:*)",
+      "Bash(tail:*)",
+      "Bash(pnpm remove:*)"
+    ]
+  }
+}

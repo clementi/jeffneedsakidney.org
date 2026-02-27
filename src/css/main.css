@@ -1,0 +1,593 @@
+/* ============================================================
+   jeffreypratt.net — main stylesheet
+   ============================================================ */
+
+/* --- Self-hosted Castoro (TiroTypeworks/Castoro v3.01 on GitHub) --- */
+@font-face {
+  font-family: "Castoro";
+  src: url("../fonts/castoro/Castoro-Regular.woff2") format("woff2"),
+       url("../fonts/castoro/Castoro-Regular.woff")  format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Castoro";
+  src: url("../fonts/castoro/Castoro-Italic.woff2") format("woff2"),
+       url("../fonts/castoro/Castoro-Italic.woff")  format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Castoro";
+  src: url("../fonts/castoro/Castoro-Medium.woff2") format("woff2"),
+       url("../fonts/castoro/Castoro-Medium.woff")  format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Castoro";
+  src: url("../fonts/castoro/Castoro-MediumItalic.woff2") format("woff2"),
+       url("../fonts/castoro/Castoro-MediumItalic.woff")  format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Castoro";
+  src: url("../fonts/castoro/Castoro-Semibold.woff2") format("woff2"),
+       url("../fonts/castoro/Castoro-Semibold.woff")  format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Castoro";
+  src: url("../fonts/castoro/Castoro-SemiboldItalic.woff2") format("woff2"),
+       url("../fonts/castoro/Castoro-SemiboldItalic.woff")  format("woff");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Castoro";
+  src: url("../fonts/castoro/Castoro-Bold.woff2") format("woff2"),
+       url("../fonts/castoro/Castoro-Bold.woff")  format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Castoro";
+  src: url("../fonts/castoro/Castoro-BoldItalic.woff2") format("woff2"),
+       url("../fonts/castoro/Castoro-BoldItalic.woff")  format("woff");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* --- CSS custom properties --- */
+:root {
+  --font-body: "Castoro", Georgia, "Times New Roman", Times, serif;
+  --font-code: "Google Sans Code", ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+
+  --color-bg:         #ffffff;
+  --color-text:       #1a1a1a;
+  --color-text-muted: #555555;
+  --color-link:       #0066cc;
+  --color-link-hover: #004499;
+  --color-border:     #e0e0e0;
+  --color-code-bg:    #f5f5f5;
+  --color-tag-bg:     #eef3fa;
+  --color-tag-text:   #0055aa;
+
+  /* 1rem = 10px (62.5% of 16px browser default) */
+  --max-width:    80rem;  /* 800px */
+  --spacing-sm:   1rem;   /*  10px */
+  --spacing-md:   2rem;   /*  20px */
+  --spacing-lg:   4rem;   /*  40px */
+  --spacing-xl:   6rem;   /*  60px */
+}
+
+[data-theme="dark"],
+.dark-mode {
+  --color-bg:         #1a1a1a;
+  --color-text:       #e8e8e8;
+  --color-text-muted: #aaaaaa;
+  --color-link:       #5599ee;
+  --color-link-hover: #88bbff;
+  --color-border:     #3a3a3a;
+  --color-code-bg:    #2a2a2a;
+  --color-tag-bg:     #1e2a3a;
+  --color-tag-text:   #88bbff;
+}
+
+/* Auto mode: follow system preference unless user has set a theme */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) {
+    --color-bg:         #1a1a1a;
+    --color-text:       #e8e8e8;
+    --color-text-muted: #aaaaaa;
+    --color-link:       #5599ee;
+    --color-link-hover: #88bbff;
+    --color-border:     #3a3a3a;
+    --color-code-bg:    #2a2a2a;
+    --color-tag-bg:     #1e2a3a;
+    --color-tag-text:   #88bbff;
+  }
+}
+
+/* --- Reset / base --- */
+*, *::before, *::after { box-sizing: border-box; }
+
+/*
+ * 62.5% trick: makes 1rem = 10px (at the 16px browser default).
+ * Body text is set to 2rem = 20px. All rem values below are
+ * therefore multiples of 10px for straightforward mental arithmetic.
+ */
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1.8rem;   /* 18px */
+  line-height: 1.5;
+  transition: background 0.2s, color 0.2s;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.25;
+  margin-top: 3.6rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+h1 { font-size: 3.6rem; }  /* 36px */
+h2 { font-size: 2.8rem; }  /* 28px */
+h3 { font-size: 2.2rem; }  /* 22px */
+
+p { margin: 0 0 2rem; }
+
+a {
+  color: var(--color-link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+a:hover { color: var(--color-link-hover); }
+
+blockquote {
+  margin: 3rem 0;
+  padding: 1rem 2.5rem;
+  border-left: 3px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 4rem 0;
+}
+
+img { max-width: 100%; height: auto; }
+
+/* --- Code --- */
+code, kbd, samp {
+  font-family: var(--font-code);
+  font-size: 0.875em;
+}
+
+:not(pre) > code {
+  background: var(--color-code-bg);
+  padding: 0.15em 0.35em;
+  border-radius: 3px;
+}
+
+pre {
+  background: var(--color-code-bg);
+  padding: 2rem 2.5rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  line-height: 1.5;
+  margin: 3rem 0;
+  /* Setting font-size here (not just on pre code) ensures the block's
+     anonymous "strut" uses the same metrics as the code lines, so the
+     line-number spans stay aligned throughout. */
+  font-size: 1.6rem;  /* 16px */
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;  /* override the 0.875em from code, kbd, samp */
+}
+
+/* --- Code block: line numbers + copy button (added by code.js) --- */
+
+/* .code-block wraps the pre so the copy button can be positioned
+   outside the pre's scroll container. */
+.code-block {
+  position: relative;
+  margin: 3rem 0;
+}
+
+.code-block pre {
+  margin: 0;
+  /* Extra left padding makes room for the line-number gutter (5rem)
+     plus a gap (1.5rem) between the gutter border and the code. */
+  padding-left: 7rem;
+}
+
+/* The gutter itself: one child <span> per line, positioned absolute
+   so it sits in the pre's left padding area. */
+.line-numbers-rows {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5.5rem;
+  padding-top: 2rem;   /* matches pre padding-top */
+  padding-bottom: 2rem;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  border-right: 1px solid var(--color-border);
+  font-family: var(--font-code);
+  font-size: 1.6rem;  /* matches pre code */
+  line-height: 1.5;
+  counter-reset: linenumber;
+}
+
+.line-numbers-rows > span {
+  display: block;
+  counter-increment: linenumber;
+}
+
+.line-numbers-rows > span::before {
+  content: counter(linenumber);
+  color: var(--color-text-muted);
+  display: block;
+  padding-right: 1rem;
+  text-align: right;
+}
+
+/* Copy button: sits in the top-right corner of the wrapper. */
+.code-copy-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.3rem 1rem;
+  background: var(--color-code-bg);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-family: var(--font-code);
+  font-size: 1.3rem;  /* 13px */
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  z-index: 1;
+}
+
+.code-copy-btn:hover {
+  color: var(--color-text);
+  border-color: var(--color-text-muted);
+}
+
+.code-copy-btn.is-copied {
+  color: #2a9a6a;
+  border-color: #2a9a6a;
+}
+
+/* --- KaTeX --- */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 1rem 0;
+}
+
+
+/* --- Layout --- */
+.site-header {
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.site-header__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.site-logo {
+  font-size: 2.2rem;  /* 22px */
+  font-weight: bold;
+  color: var(--color-text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.site-logo:hover { color: var(--color-link); }
+
+.site-nav {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 1.9rem;  /* 19px */
+}
+.site-nav a:hover { color: var(--color-link); }
+
+.site-header__right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Social links */
+.social-links {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.social-links a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+.social-links a:hover { color: var(--color-link); }
+
+/* Theme toggle */
+.theme-toggle {
+  display: flex;
+  gap: 0.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 2px;
+}
+
+.theme-toggle button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: 1.4rem;  /* 14px */
+  padding: 2px 8px;
+  border-radius: 16px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.theme-toggle button.active {
+  background: var(--color-link);
+  color: #fff;
+}
+
+.theme-toggle button:hover:not(.active) {
+  background: var(--color-code-bg);
+  color: var(--color-text);
+}
+
+/* Main content */
+.site-main {
+  flex: 1;
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-lg);
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: 1.6rem;  /* 16px */
+  color: var(--color-text-muted);
+}
+
+.site-footer__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.site-footer p { margin: 0; }
+
+/* --- Blog listing --- */
+.post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.post-list__item {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.post-list__item:first-child { padding-top: 0; }
+
+.post-list__date {
+  font-size: 1.6rem;  /* 16px */
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.post-list__title {
+  margin: 0 0 0.7rem;
+  font-size: 2.2rem;  /* 22px */
+}
+
+.post-list__title a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.post-list__title a:hover { color: var(--color-link); }
+
+.post-list__excerpt {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 1.8rem;  /* 18px */
+}
+
+/* --- Post --- */
+.post__header { margin-bottom: 4rem; }
+
+.post__title { margin-top: 0; }
+
+.post__meta {
+  display: flex;
+  align-items: baseline;
+  gap: 2rem;
+  flex-wrap: wrap;
+  font-size: 1.6rem;  /* 16px */
+  color: var(--color-text-muted);
+}
+
+.post__tags { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+
+/* Tags */
+.tag {
+  display: inline-block;
+  background: var(--color-tag-bg);
+  color: var(--color-tag-text);
+  padding: 1px 8px;
+  border-radius: 3px;
+  font-size: 1.4rem;  /* 14px */
+  text-decoration: none;
+}
+.tag:hover { opacity: 0.8; }
+
+/* --- Pagination --- */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--color-border);
+  font-size: 1.8rem;  /* 18px */
+}
+
+.pagination a { color: var(--color-link); text-decoration: none; }
+.pagination a:hover { text-decoration: underline; }
+.pagination__count { color: var(--color-text-muted); }
+
+/* --- Projects --- */
+.project-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.project-list__item {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.project-list__item:first-child { padding-top: 0; }
+
+.project-list__name {
+  margin: 0 0 0.7rem;
+  font-size: 2.2rem;  /* 22px */
+}
+
+.project-list__desc {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+/* --- Tag index page --- */
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 3rem 0;
+}
+
+/* --- Contact form --- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.form-group label {
+  font-size: 1.8rem;  /* 18px */
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  font-family: var(--font-body);
+  font-size: 2rem;  /* 20px — matches body */
+  background: var(--color-bg);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  transition: border-color 0.15s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-link);
+}
+
+.form-group textarea { min-height: 16rem; resize: vertical; }
+
+.btn {
+  display: inline-block;
+  background: var(--color-link);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 1.2rem 2.8rem;
+  font-family: var(--font-body);
+  font-size: 2rem;  /* 20px */
+  cursor: pointer;
+  text-decoration: none;
+  align-self: flex-start;
+  transition: background 0.15s;
+}
+
+.btn:hover { background: var(--color-link-hover); color: #fff; }
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  html { font-size: 56.25%; }  /* 1rem ≈ 9px; body ≈ 18px */
+
+  .site-header__inner { gap: 1.5rem; }
+
+  .site-header__right { margin-left: 0; width: 100%; }
+
+  .site-main { padding: var(--spacing-lg) var(--spacing-md); }
+}

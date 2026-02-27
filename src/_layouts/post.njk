@@ -1,0 +1,23 @@
+---
+layout: base.njk
+---
+<article class="post">
+  <header class="post__header">
+    <h1 class="post__title">{{ title }}</h1>
+    <div class="post__meta">
+      <time datetime="{{ date | dateISO }}">{{ date | dateDisplay }}</time>
+      {% if tags %}
+      <span class="post__tags">
+        {% for tag in tags %}
+          {% if tag != "post" %}
+          <a href="/blog/tags/{{ tag | slugify }}/" class="tag">{{ tag }}</a>
+          {% endif %}
+        {% endfor %}
+      </span>
+      {% endif %}
+    </div>
+  </header>
+  <div class="post__body">
+    {{ content | safe }}
+  </div>
+</article>
