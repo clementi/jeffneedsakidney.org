@@ -84,7 +84,7 @@
   --color-tag-text:   #0055aa;
 
   /* 1rem = 10px (62.5% of 16px browser default) */
-  --max-width:    80rem;  /* 800px */
+  --max-width:    90rem;  /* 900px */
   --spacing-sm:   1rem;   /*  10px */
   --spacing-md:   2rem;   /*  20px */
   --spacing-lg:   4rem;   /*  40px */
@@ -137,7 +137,7 @@ body {
   background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
-  font-size: 1.8rem;   /* 18px */
+  font-size: 2rem;     /* 20px */
   line-height: 1.5;
   transition: background 0.2s, color 0.2s;
   min-height: 100vh;
@@ -514,6 +514,8 @@ pre code {
 .project-list__desc {
   margin: 0;
   color: var(--color-text-muted);
+  font-size: 1.8rem;
+  font-style: italic;
 }
 
 /* --- Tag index page --- */
