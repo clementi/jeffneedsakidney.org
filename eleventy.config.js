@@ -63,6 +63,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/fonts");
   eleventyConfig.addPassthroughCopy("src/resume.pdf");
   eleventyConfig.addPassthroughCopy("src/googleb53b14940f3802ae.html");
+  eleventyConfig.ignores.add("src/googleb53b14940f3802ae.html");
   eleventyConfig.addPassthroughCopy("src/yandex_6a465c15b8e56ae2.txt");
 
   return {
