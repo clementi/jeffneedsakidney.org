@@ -1,6 +1,6 @@
 [
   {
-    "name": "secret-gen",
+    "name": "secret",
     "url": "https://github.com/clementi/secret",
     "description": "Command-line password/passphrase generator."
   },
