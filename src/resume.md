@@ -6,4 +6,4 @@ permalink: /resume/
 
 My resume is available as a PDF.
 
-[Download Resume (PDF)](#) <!-- Replace # with actual PDF URL when available -->
+[Download Resume (PDF)](/resume.pdf)
