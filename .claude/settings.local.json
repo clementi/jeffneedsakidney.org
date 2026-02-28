@@ -8,7 +8,9 @@
       "Bash(curl:*)",
       "Bash(mkdir:*)",
       "Bash(tail:*)",
-      "Bash(pnpm remove:*)"
+      "Bash(pnpm remove:*)",
+      "Bash(git push:*)",
+      "Bash(git add:*)"
     ]
   }
 }

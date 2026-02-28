@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 
-aws --profile aws1 s3 sync . s3://jeffreypratt.net --exclude='.git/*' --exclude=publish --exclude=purge
+aws s3 sync _site/ s3://jeffreypratt.net --exclude='.git/*' --exclude=publish --exclude=purge
