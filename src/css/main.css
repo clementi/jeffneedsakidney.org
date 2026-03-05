@@ -74,7 +74,7 @@
   --font-code: "Google Sans Code", ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
 
   --color-bg:         #ffffff;
-  --color-text:       #1a1a1a;
+  --color-text:       rgb(51, 51, 51);
   --color-text-muted: #555555;
   --color-link:       #0066cc;
   --color-link-hover: #004499;
@@ -157,9 +157,12 @@ h1 { font-size: 3.6rem; }  /* 36px */
 h2 { font-size: 2.8rem; }  /* 28px */
 h3 { font-size: 2.2rem; }  /* 22px */
 
+article.post p {
+  margin: 0;
+}
+
 article.post p:not(:first-child):not(h1 + p):not(h2 + p):not(h3 + p):not(h4 + p):not(h5 + p):not(h6 + p) {
   text-indent: 1.3em;
-  margin: 0;
 }
 
 p { 
