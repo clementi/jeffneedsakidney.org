@@ -8,6 +8,8 @@ permalink: /contact/
 <!-- TODO: Wire up action and method to a third-party form service (e.g. Formspree, Basin, etc.) -->
 <form class="contact-form" action="https://api.staticforms.dev/submit" method="POST">
   <input type="hidden" name="apiKey" value="sf_6c2d8c5lde9gcm3che67hiij">
+  <input type="text" name="honeypot" style="display: none" tabindex="-1" autocomplete="off">
+  <input type="hidden" name="redirectTo" value="{{ site.url }}/thankyou">
   <div class="form-group">
     <label for="contact-name">Name</label>
     <input type="text" id="contact-name" name="name" required autocomplete="name">
