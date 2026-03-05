@@ -157,12 +157,12 @@ h1 { font-size: 3.6rem; }  /* 36px */
 h2 { font-size: 2.8rem; }  /* 28px */
 h3 { font-size: 2.2rem; }  /* 22px */
 
-p:not(:first-child):not(h1 + p):not(h2 + p):not(h3 + p):not(h4 + p):not(h5 + p):not(h6 + p) {
+article.post p:not(:first-child):not(h1 + p):not(h2 + p):not(h3 + p):not(h4 + p):not(h5 + p):not(h6 + p) {
   text-indent: 1.3em;
+  margin: 0;
 }
 
 p { 
-  margin: 0;
   text-align: justify;
 }
 
