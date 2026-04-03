@@ -3,28 +3,45 @@ layout: base.njk
 title: Home
 ---
 <section class="home-intro">
-  <h1>Jeffrey Pratt</h1>
-  <p>Software developer. This is where I write about code, mathematics, and whatever else catches my attention.</p>
+  <h1>Help Jeff Get a Kidney</h1>
+  <p>I&rsquo;m Jeff Pratt, and I&rsquo;m in need of a living kidney donor. If you&rsquo;re here, you&rsquo;re already taking the first step toward learning how you might help save a life. Thank you.</p>
 </section>
 
-{% if collections.posts.length %}
-<section class="home-recent">
-  <h2>Recent posts</h2>
-  <ul class="post-list">
-    {% for post in collections.posts | limit(5) %}
-    <li class="post-list__item">
-      <div class="post-list__date">
-        <time datetime="{{ post.date | dateISO }}">{{ post.date | dateDisplay }}</time>
-      </div>
-      <h3 class="post-list__title">
-        <a href="{{ post.url }}">{{ post.data.title }}</a>
-      </h3>
-      {% if post.data.excerpt %}
-      <p class="post-list__excerpt">{{ post.data.excerpt }}</p>
-      {% endif %}
-    </li>
-    {% endfor %}
-  </ul>
-  <p><a href="/blog/">All posts &rarr;</a></p>
+<section>
+  <h2>Why I need a kidney</h2>
+  <p>
+    I have an autoimmune disease called <strong>IgA nephropathy</strong>, in which the immune system mistakenly attacks the kidneys. This causes a decline in kidney function over time, leading to eventual kidney failure. I was diagnosed with this disease in 2008, and I&rsquo;ve been undergoing treatments to slow it down as much as possible. My kidney function has declined to the point where a transplant is the best path forward.
+  </p>
+  <p style="text-align: center;"><a href="https://uofulivingdonor.org?utm_source=jeffneedsakidney" class="btn">Begin the Living Donor Process</a></p>
 </section>
-{% endif %}
+
+<section>
+  <h2>Common questions</h2>
+
+  <h3>What is living kidney donation?</h3>
+  <p>A living donor kidney transplant involves a healthy person voluntarily donating one of their two kidneys. Living donor transplants have better outcomes and shorter wait times than deceased donor transplants. Transplantation is a better option for patients than dialysis.</p>
+
+  <h3>How much does it cost?</h3>
+  <p>
+    My insurance will cover the costs of evaluation and surgery to any living donor.
+  </p>
+  <h3>Do I have to be a match?</h3>
+  <p>
+    If a donor is a match for me, then that&rsquo;s great&mdash;but even if you are not a match, there is a <strong>paired exchange program</strong>, in which you can still donate to someone who is a match, and I can receive a kidney from another donor that will match me.
+  </p>
+  <h3>What is recovery like for a donor?</h3>
+  <p>
+    Recovery for a donor is typically a few days in the hospital, and then most donors are back to normal life within 4&ndash;6 weeks.
+  </p>
+  <h3>Can I get by on one kidney?</h3>
+  <p>
+    Research consistently shows that living donors have no reduced life expectancy or quality of life.
+  </p>
+</section>
+
+<section>
+  <h2>How to get started</h2>
+  <p>If you&rsquo;re interested in learning more or beginning the evaluation process, please <a href="/contact/">reach out to me</a>. There is no obligation&mdash;I&rsquo;m grateful for anyone willing to learn more.</p>
+  <p>Or, you can begin the process at the University of Utah Transplant Center here:</p>
+  <p style="text-align: center;"><a href="https://uofulivingdonor.org?utm_source=jeffneedsakidney" class="btn">Begin the Living Donor Process</a></p>
+</section>

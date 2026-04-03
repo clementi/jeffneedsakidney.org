@@ -2,82 +2,16 @@
    jeffreypratt.net — main stylesheet
    ============================================================ */
 
-/* --- Self-hosted Castoro (TiroTypeworks/Castoro v3.01 on GitHub) --- */
-@font-face {
-  font-family: "Castoro";
-  src: url("../fonts/castoro/Castoro-Regular.woff2") format("woff2"),
-       url("../fonts/castoro/Castoro-Regular.woff")  format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Castoro";
-  src: url("../fonts/castoro/Castoro-Italic.woff2") format("woff2"),
-       url("../fonts/castoro/Castoro-Italic.woff")  format("woff");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Castoro";
-  src: url("../fonts/castoro/Castoro-Medium.woff2") format("woff2"),
-       url("../fonts/castoro/Castoro-Medium.woff")  format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Castoro";
-  src: url("../fonts/castoro/Castoro-MediumItalic.woff2") format("woff2"),
-       url("../fonts/castoro/Castoro-MediumItalic.woff")  format("woff");
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Castoro";
-  src: url("../fonts/castoro/Castoro-Semibold.woff2") format("woff2"),
-       url("../fonts/castoro/Castoro-Semibold.woff")  format("woff");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Castoro";
-  src: url("../fonts/castoro/Castoro-SemiboldItalic.woff2") format("woff2"),
-       url("../fonts/castoro/Castoro-SemiboldItalic.woff")  format("woff");
-  font-weight: 600;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Castoro";
-  src: url("../fonts/castoro/Castoro-Bold.woff2") format("woff2"),
-       url("../fonts/castoro/Castoro-Bold.woff")  format("woff");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Castoro";
-  src: url("../fonts/castoro/Castoro-BoldItalic.woff2") format("woff2"),
-       url("../fonts/castoro/Castoro-BoldItalic.woff")  format("woff");
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
-
 /* --- CSS custom properties --- */
 :root {
-  --font-body: "Castoro", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-code: "Google Sans Code", ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
 
   --color-bg:         #ffffff;
   --color-text:       rgb(51, 51, 51);
   --color-text-muted: #555555;
-  --color-link:       #0066cc;
-  --color-link-hover: #004499;
+  --color-link:       #3cbfb0;
+  --color-link-hover: #6dd4c8;
   --color-border:     #e0e0e0;
   --color-code-bg:    #f5f5f5;
   --color-tag-bg:     #eef3fa;
@@ -96,8 +30,8 @@
   --color-bg:         #1a1a1a;
   --color-text:       #e8e8e8;
   --color-text-muted: #aaaaaa;
-  --color-link:       #5599ee;
-  --color-link-hover: #88bbff;
+  --color-link:       #1a8a7d;
+  --color-link-hover: #14685e;
   --color-border:     #3a3a3a;
   --color-code-bg:    #2a2a2a;
   --color-tag-bg:     #1e2a3a;
@@ -110,8 +44,8 @@
     --color-bg:         #1a1a1a;
     --color-text:       #e8e8e8;
     --color-text-muted: #aaaaaa;
-    --color-link:       #5599ee;
-    --color-link-hover: #88bbff;
+    --color-link:       #3cbfb0;
+    --color-link-hover: #6dd4c8;
     --color-border:     #3a3a3a;
     --color-code-bg:    #2a2a2a;
     --color-tag-bg:     #1e2a3a;
@@ -150,7 +84,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.25;
   margin-top: 3.6rem;
   margin-bottom: 1rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 h1 { font-size: 3.6rem; }  /* 36px */
@@ -163,10 +97,6 @@ article.post p {
 
 article.post p:not(:first-child):not(h1 + p):not(h2 + p):not(h3 + p):not(h4 + p):not(h5 + p):not(h6 + p) {
   text-indent: 1.3em;
-}
-
-p { 
-  text-align: justify;
 }
 
 a {
@@ -309,7 +239,8 @@ pre code {
 
 /* --- Layout --- */
 .site-header {
-  border-bottom: 1px solid var(--color-border);
+  background: var(--color-link);
+  color: #fff;
   padding: var(--spacing-md) var(--spacing-lg);
 }
 
@@ -325,11 +256,11 @@ pre code {
 .site-logo {
   font-size: 2.2rem;  /* 22px */
   font-weight: bold;
-  color: var(--color-text);
+  color: #fff;
   text-decoration: none;
   white-space: nowrap;
 }
-.site-logo:hover { color: var(--color-link); }
+.site-logo:hover { color: rgba(255, 255, 255, 0.8); }
 
 .site-nav {
   display: flex;
@@ -338,11 +269,11 @@ pre code {
 }
 
 .site-nav a {
-  color: var(--color-text);
+  color: #fff;
   text-decoration: none;
   font-size: 1.9rem;  /* 19px */
 }
-.site-nav a:hover { color: var(--color-link); }
+.site-nav a:hover { color: rgba(255, 255, 255, 0.8); }
 
 .site-header__right {
   margin-left: auto;
@@ -359,18 +290,18 @@ pre code {
 }
 
 .social-links a {
-  color: var(--color-text-muted);
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   display: flex;
   align-items: center;
 }
-.social-links a:hover { color: var(--color-link); }
+.social-links a:hover { color: #fff; }
 
 /* Theme toggle */
 .theme-toggle {
-  display: flex;
+  display: none;
   gap: 0.25rem;
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 20px;
   padding: 2px;
 }
@@ -379,7 +310,7 @@ pre code {
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--color-text-muted);
+  color: rgba(255, 255, 255, 0.7);
   font-family: var(--font-body);
   font-size: 1.4rem;  /* 14px */
   padding: 2px 8px;
@@ -388,13 +319,13 @@ pre code {
 }
 
 .theme-toggle button.active {
-  background: var(--color-link);
+  background: rgba(255, 255, 255, 0.25);
   color: #fff;
 }
-m
+
 .theme-toggle button:hover:not(.active) {
-  background: var(--color-code-bg);
-  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
 }
 
 /* Main content */

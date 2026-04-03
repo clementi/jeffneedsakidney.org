@@ -1,7 +1,7 @@
 {
   "name": "jeffreypratt.net",
   "version": "1.0.0",
-  "description": "Personal website of Jeffrey Pratt",
+  "description": "Help Jeff Pratt find a living kidney donor.",
   "type": "module",
   "scripts": {
     "build": "eleventy",
@@ -14,10 +14,7 @@
   "packageManager": "pnpm@10.30.3",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
-    "@11ty/eleventy-plugin-rss": "^2.0.4",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
     "markdown-it": "^14.1.1",
-    "markdown-it-attrs": "^4.3.1",
-    "markdown-it-katex": "^2.0.3"
+    "markdown-it-attrs": "^4.3.1"
   }
 }

@@ -1,6 +1,6 @@
 export default {
-  title: "Jeffrey Pratt",
-  description: "Personal website of Jeffrey Pratt — blog, projects, and more.",
+  title: "Jeff Needs a Kidney",
+  description: "Help Jeff Pratt find a living kidney donor.",
   url: "https://jeffreypratt.net",
   author: "Jeffrey Pratt",
   social: {
