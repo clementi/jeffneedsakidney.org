@@ -1,6 +1,6 @@
 export default {
-  title: "Jeff Needs a Kidney",
-  description: "Help Jeff Pratt find a living kidney donor.",
+  title: "Jeff Got a Kidney!",
+  description: "I'm grateful to my donors.",
   url: "https://jeffreypratt.net",
   author: "Jeffrey Pratt",
   social: {
